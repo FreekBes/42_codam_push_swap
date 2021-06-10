@@ -6,13 +6,20 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:38:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:28:37 by fbes          ########   odam.nl         */
+/*   Updated: 2021/06/10 18:38:13 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <unistd.h>
+
+static void	print_op(char *op, char id)
+{
+	write(1, op, ft_strlen(op));
+	write(1, &id, 1);
+	write(1, "\n", 1);
+}
 
 void	swap(t_stack *s)
 {
@@ -23,8 +30,6 @@ void	swap(t_stack *s)
 		temp = s->stack[0];
 		s->stack[0] = s->stack[1];
 		s->stack[1] = temp;
-		write(1, "s", 1);
-		write(1, &s->id, 1);
 	}
 }
 

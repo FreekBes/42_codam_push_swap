@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   reverse.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:51:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:41:49 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:53:21 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	reverse(t_stack *s)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int			i;
+	int		temp;
 
-	a = new_stack('a', argc - 1);
-	b = new_stack('b', argc - 1);
-	if (a && b)
+	if (s->length > 1)
 	{
-		i = 1;
-		while (i < argc)
-		{
-			a->stack[argc - i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-		a->length = argc - 1;
-		print_stack(a);
-		print_stack(b);
+		temp = s->stack[0];
+		ft_memmove(s->stack, &(s->stack[1]), sizeof(int) * (s->length - 1));
+		s->stack[s->length - 1] = temp;
 	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
-	return (0);
+}
+
+void	rra(t_stack *a)
+{
+	reverse(a);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack *b)
+{
+	reverse(b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	reverse(a);
+	reverse(b);
+	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:25:37 by fbes          ########   odam.nl         */
+/*   Updated: 2021/06/10 18:55:34 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,16 @@ void			push(t_stack *s, int n);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);
 void			reverse(t_stack *s);
+void			sa(t_stack *a);
+void			sb(t_stack *b);
+void			ss(t_stack *a, t_stack *b);
+void			pa(t_stack *a, t_stack *b);
+void			pb(t_stack *a, t_stack *b);
+void			ra(t_stack *a);
+void			rb(t_stack *b);
+void			rr(t_stack *a, t_stack *b);
+void			rra(t_stack *a);
+void			rrb(t_stack *b);
+void			rrr(t_stack *a, t_stack *b);
 
 #endif

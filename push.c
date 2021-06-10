@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   push.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:51:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:55:13 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	push(t_stack *s, int n)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int			i;
-
-	a = new_stack('a', argc - 1);
-	b = new_stack('b', argc - 1);
-	if (a && b)
+	if (s->length < s->max)
 	{
-		i = 1;
-		while (i < argc)
-		{
-			a->stack[argc - i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-		a->length = argc - 1;
-		print_stack(a);
-		print_stack(b);
+		s->stack[s->length] = n;
+		s->length++;
 	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
-	return (0);
+	else
+		s->stack[s->length - 1] = n;
+}
+
+void	pa(t_stack *a, t_stack *b)
+{
+	if (b->length > 0)
+	{
+		push(a, b->stack[b->length - 1]);
+		write(1, "pa\n", 3);
+	}
+}
+
+void	pb(t_stack *a, t_stack *b)
+{
+	if (a->length > 0)
+	{
+		push(b, a->stack[a->length - 1]);
+		write(1, "pb\n", 3);
+	}
 }

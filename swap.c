@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   swap.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:51:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:44:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	swap(t_stack *s)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int			i;
+	int		temp;
 
-	a = new_stack('a', argc - 1);
-	b = new_stack('b', argc - 1);
-	if (a && b)
+	if (s->length > 1)
 	{
-		i = 1;
-		while (i < argc)
-		{
-			a->stack[argc - i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-		a->length = argc - 1;
-		print_stack(a);
-		print_stack(b);
+		temp = s->stack[0];
+		s->stack[0] = s->stack[1];
+		s->stack[1] = temp;
 	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
-	return (0);
+}
+
+void	sa(t_stack *a)
+{
+	swap(a);
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_stack *b)
+{
+	swap(b);
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
 }

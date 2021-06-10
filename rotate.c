@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   rotate.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:51:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:52:48 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	rotate(t_stack *s)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int			i;
+	int		temp;
 
-	a = new_stack('a', argc - 1);
-	b = new_stack('b', argc - 1);
-	if (a && b)
+	if (s->length > 1)
 	{
-		i = 1;
-		while (i < argc)
-		{
-			a->stack[argc - i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-		a->length = argc - 1;
-		print_stack(a);
-		print_stack(b);
+		temp = s->stack[s->length - 1];
+		ft_memmove(&(s->stack[1]), s->stack, sizeof(int) * (s->length - 1));
+		s->stack[0] = temp;
 	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
-	return (0);
+}
+
+void	ra(t_stack *a)
+{
+	rotate(a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *b)
+{
+	rotate(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }

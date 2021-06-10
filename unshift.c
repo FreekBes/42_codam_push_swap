@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   unshift.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:51:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:48:12 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:51:57 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
 
-int	main(int argc, char **argv)
+void	unshift(t_stack *s, int n)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int			i;
-
-	a = new_stack('a', argc - 1);
-	b = new_stack('b', argc - 1);
-	if (a && b)
-	{
-		i = 1;
-		while (i < argc)
-		{
-			a->stack[argc - i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-		a->length = argc - 1;
-		print_stack(a);
-		print_stack(b);
-	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
-	return (0);
+	ft_memmove(&(s->stack[1]), s->stack, sizeof(int) * (s->max - 1));
+	s->stack[0] = n;
+	if (s->length < s->max)
+		s->length++;
 }

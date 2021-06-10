@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:55:34 by fbes          ########   odam.nl         */
+/*   Updated: 2021/06/10 19:00:11 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_stack			*new_stack(char id, int maxlen);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);
 void			push(t_stack *s, int n);
+void			unshift(t_stack *s, int n);
+void			pop(t_stack *s);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);
 void			reverse(t_stack *s);

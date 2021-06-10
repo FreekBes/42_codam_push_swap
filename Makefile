@@ -6,13 +6,13 @@
 #    By: fbes <fbes@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/06/10 17:22:54 by fbes          #+#    #+#                  #
-#    Updated: 2021/06/10 18:42:44 by fbes          ########   odam.nl          #
+#    Updated: 2021/06/10 19:00:18 by fbes          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			push_swap
 
-SRCS =			main.c stack.c push.c reverse.c rotate.c swap.c
+SRCS =			main.c stack.c push.c reverse.c rotate.c swap.c pop.c
 
 OBJS =			$(SRCS:.c=.o)
 

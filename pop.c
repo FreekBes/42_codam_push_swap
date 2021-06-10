@@ -1,46 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push.c                                             :+:    :+:            */
+/*   pop.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 19:00:39 by fbes          ########   odam.nl         */
+/*   Created: 2021/06/10 18:58:53 by fbes          #+#    #+#                 */
+/*   Updated: 2021/06/10 18:59:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include <unistd.h>
 
-void	push(t_stack *s, int n)
+void	pop(t_stack *s)
 {
-	if (s->length < s->max)
+	if (s->length > 0)
 	{
-		s->stack[s->length] = n;
-		s->length++;
-	}
-	else
-		s->stack[s->length - 1] = n;
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-	if (b->length > 0)
-	{
-		push(a, b->stack[b->length - 1]);
-		pop(b);
-		write(1, "pa\n", 3);
-	}
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	if (a->length > 0)
-	{
-		push(b, a->stack[a->length - 1]);
-		pop(a);
-		write(1, "pb\n", 3);
+		s->stack[s->length - 1] = 0;
+		s->length--;
 	}
 }

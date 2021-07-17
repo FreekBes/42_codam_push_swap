@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 19:00:11 by fbes          ########   odam.nl         */
+/*   Updated: 2021/07/17 22:19:28 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_stack
 t_stack			*new_stack(char id, int maxlen);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);
+int				ps_atoi(char *s, int *n);
+int				is_dup(t_stack *s, int n);
 void			push(t_stack *s, int n);
 void			unshift(t_stack *s, int n);
 void			pop(t_stack *s);

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/08/24 17:47:15 by fbes          ########   odam.nl         */
+/*   Updated: 2021/08/24 18:10:42 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ int	main(int argc, char **argv)
 			i++;
 		}
 		print_stack(a);
+		print_stacks(a, b);
+		while (operate(a, b))
+			i++;
+		print_stacks(a, b);
 		print_stack(b);
 	}
 	free_stack(a);

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/07/17 22:19:28 by fbes          ########   odam.nl         */
+/*   Updated: 2021/08/24 18:24:23 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ void			rr(t_stack *a, t_stack *b);
 void			rra(t_stack *a);
 void			rrb(t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
+int				operate(t_stack *a, t_stack *b);
+int				is_sorted(t_stack *s, int dir);
 
 #endif

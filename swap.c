@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:44:51 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 11:07:04 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	swap(t_stack *s)
 
 	if (s->length > 1)
 	{
-		temp = s->stack[0];
-		s->stack[0] = s->stack[1];
-		s->stack[1] = temp;
+		temp = s->stack[s->length - 1];
+		s->stack[s->length - 1] = s->stack[s->length - 2];
+		s->stack[s->length - 2] = temp;
 	}
 }
 

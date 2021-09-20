@@ -6,18 +6,18 @@
 #    By: fbes <fbes@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/06/10 17:22:54 by fbes          #+#    #+#                  #
-#    Updated: 2021/08/24 18:33:12 by fbes          ########   odam.nl          #
+#    Updated: 2021/09/20 11:13:46 by fbes          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			push_swap
 
 SRCS =			main.c num_handling.c stack.c push.c reverse.c rotate.c swap.c \
-				pop.c sort.c is_sorted.c
+				pop.c sort.c sort_three.c is_sorted.c
 
 OBJS =			$(SRCS:.c=.o)
 
-CFLAGS =
+CFLAGS =		-Wall -Werror -Wextra
 
 all: $(NAME)
 

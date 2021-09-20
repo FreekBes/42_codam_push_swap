@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/08/24 18:24:23 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 12:14:36 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,22 @@ void			rotate(t_stack *s);
 void			reverse(t_stack *s);
 void			sa(t_stack *a);
 void			sb(t_stack *b);
+void			sf(t_stack *b);
 void			ss(t_stack *a, t_stack *b);
 void			pa(t_stack *a, t_stack *b);
 void			pb(t_stack *a, t_stack *b);
+void			pf(t_stack *a, t_stack *b);
 void			ra(t_stack *a);
 void			rb(t_stack *b);
+void			rf(t_stack *b);
 void			rr(t_stack *a, t_stack *b);
 void			rra(t_stack *a);
 void			rrb(t_stack *b);
+void			rrf(t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
 int				operate(t_stack *a, t_stack *b);
 int				is_sorted(t_stack *s, int dir);
+void			sort_three(t_stack *s);
+void			sort_five(t_stack *a, t_stack *b);
 
 #endif

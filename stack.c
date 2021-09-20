@@ -6,18 +6,22 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:10:54 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 12:00:33 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
+// stacks implemented using arrays
+// top equals last index
+
 void	print_stack(t_stack *s)
 {
 	int		i;
 
 	i = 0;
+	ft_putstr_fd("BOTTOM (BIGGEST) [", 1);
 	while (i < s->max)
 	{
 		if (i > 0)
@@ -25,7 +29,7 @@ void	print_stack(t_stack *s)
 		ft_putnbr_fd(s->stack[i], 1);
 		i++;
 	}
-	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("] TOP (SMALLEST)\n", 1);
 }
 
 void	free_stack(t_stack *s)

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
-/*   Updated: 2021/06/10 18:52:48 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 12:05:37 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,12 @@ void	rr(t_stack *a, t_stack *b)
 	rotate(a);
 	rotate(b);
 	write(1, "rr\n", 3);
+}
+
+void	rf(t_stack *s)
+{
+	rotate(s);
+	write(1, "r", 1);
+	write(1, &(s->id), 1);
+	write(1, "\n", 1);
 }

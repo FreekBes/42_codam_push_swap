@@ -6,13 +6,11 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 17:59:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:14:01 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 12:54:40 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
 
 void	sort_three(t_stack *s)
 {

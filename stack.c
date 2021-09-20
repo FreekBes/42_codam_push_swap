@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:00:33 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/20 12:57:32 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_stack(t_stack *s)
 
 	i = 0;
 	ft_putstr_fd("BOTTOM (BIGGEST) [", 1);
-	while (i < s->max)
+	while (i < s->length)
 	{
 		if (i > 0)
 			ft_putchar_fd(' ', 1);

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 18:37:56 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/03 18:22:16 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/25 00:37:06 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,17 @@ static int	ptr_loop(intptr_t ptr, int fd)
 	if (ptr != 0)
 	{
 		written_chars = ptr_loop(ptr / 16, fd);
-		write(fd, &base[ptr % 16], 1);
-		return (written_chars + 1);
+		return (written_chars + write(fd, &base[ptr % 16], 1));
 	}
 	return (written_chars);
 }
 
 int	ft_putptr_fd(intptr_t ptr, int fd)
 {
-	write(fd, "0x", 2);
+	int			written_chars;
+
+	written_chars = write(fd, "0x", 2);
 	if (ptr == 0)
-	{
-		write(fd, "0", 1);
-		return (3);
-	}
-	return (2 + ptr_loop(ptr, fd));
+		return (written_chars + write(fd, "0", 1));
+	return (written_chars + ptr_loop(ptr, fd));
 }

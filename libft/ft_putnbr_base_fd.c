@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 17:49:16 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/03 18:21:55 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/25 00:38:06 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ static int	nbr_loop(unsigned int n, char *base, int base_num, int fd)
 	if (n != 0)
 	{
 		written_chars = nbr_loop(n / base_num, base, base_num, fd);
-		write(fd, &base[n % base_num], 1);
-		return (written_chars + 1);
+		return (write(fd, &base[n % base_num], 1));
 	}
 	return (written_chars);
 }
@@ -58,9 +57,6 @@ int	ft_putnbr_base_fd(unsigned int n, char *base, int fd)
 	if (!is_valid_base(base))
 		return (0);
 	if (n == 0)
-	{
-		write(fd, base, 1);
-		return (1);
-	}
+		return (write(fd, base, 1));
 	return (nbr_loop(n, base, base_num, fd));
 }

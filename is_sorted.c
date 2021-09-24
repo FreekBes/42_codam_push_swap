@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 18:21:19 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:00:33 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:20:02 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,27 @@
 
 int	is_sorted(t_stack *s, int dir)
 {
-	int		i;
+	t_frame		*frame;
 
-	i = 0;
+	if (s->size < 2)
+		return (1);
+	frame = s->top;
 	if (dir > 0)
 	{
-		while (i < s->length - 1)
+		while (frame->next)
 		{
-			if (s->stack[i] > s->stack[i + 1])
+			if (frame->next->num < frame->num)
 				return (0);
-			i++;
+			frame = frame->next;
 		}
 	}
 	else
 	{
-		while (i < s->length - 1)
+		while (frame->next)
 		{
-			if (s->stack[i] < s->stack[i + 1])
+			if (frame->next->num > frame->num)
 				return (0);
-			i++;
+			frame = frame->next;
 		}
 	}
 	return (1);

@@ -6,44 +6,113 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:57:32 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:45:24 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-// stacks implemented using arrays
-// top equals last index
-
 void	print_stack(t_stack *s)
 {
-	int		i;
+	t_frame		*frame;
 
-	i = 0;
-	ft_putstr_fd("BOTTOM (BIGGEST) [", 1);
-	while (i < s->length)
+	ft_putchar_fd(s->id, 1);
+	ft_putstr_fd(" TOP (SMALLEST) [", 1);
+	frame = s->top;
+	while (frame)
 	{
-		if (i > 0)
-			ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(s->stack[i], 1);
+		ft_putnbr_fd(frame->num, 1);
+		if (frame->next)
+			ft_putstr_fd(", ", 1);
+		frame = frame->next;
+	}
+	ft_putendl_fd("] BOTTOM (BIGGEST)", 1);
+}
+
+static void	print_frame(t_frame *f)
+{
+	ft_putstr_fd("num: ", 1);
+	ft_putnbr_fd(f->num, 1);
+	ft_putstr_fd(", next: 0x", 1);
+	ft_putnbr_base_fd((unsigned int)(f->next), "0123456789ABCDEF", 1);
+	ft_putchar_fd('\n', 1);
+}
+
+void	debug_stack(t_stack *s)
+{
+	t_frame		*frame;
+	int			i;
+
+	ft_putendl_fd("====================", 1);
+	ft_putstr_fd("DEBUG STACK ", 1);
+	ft_putchar_fd(s->id, 1);
+	ft_putchar_fd('\n', 1);
+	frame = s->top;
+	i = 0;
+	while (frame)
+	{
+		ft_putstr_fd("index ", 1);
+		ft_putnbr_fd(i, 1);
+		ft_putstr_fd(", ptr 0x", 1);
+		ft_putnbr_base_fd((unsigned int)(frame), "0123456789ABCDEF", 1);
+		ft_putstr_fd("; ", 1);
+		print_frame(frame);
+		frame = frame->next;
 		i++;
 	}
-	ft_putstr_fd("] TOP (SMALLEST)\n", 1);
+	ft_putendl_fd("====================\n", 1);
 }
 
 void	free_stack(t_stack *s)
 {
+	t_frame		*frame;
+	t_frame		*next_frame;
+
 	if (s)
 	{
-		if (s->stack)
-			free(s->stack);
+		frame = s->top;
+		while (frame)
+		{
+			next_frame = frame->next;
+			free(frame);
+			frame = next_frame;
+		}
 		free(s);
 		s = NULL;
 	}
 }
 
-t_stack	*new_stack(char id, int maxlen)
+t_frame	*get_stack_bottom(t_stack *s)
+{
+	t_frame		*frame;
+
+	frame = s->top;
+	while (frame->next)
+		frame = frame->next;
+	return (frame);
+}
+
+t_frame	*get_stack_frame(t_stack *s, int index)
+{
+	t_frame		*frame;
+	int			j;
+
+	if (index >= s->size)
+		return (NULL);
+	j = 0;
+	frame = s->top;
+	while (j < index)
+	{
+		frame = frame->next;
+		if (!frame)
+			return (NULL);
+		j++;
+	}
+	return (frame);
+}
+
+t_stack	*new_stack(char id)
 {
 	t_stack		*s;
 
@@ -51,11 +120,8 @@ t_stack	*new_stack(char id, int maxlen)
 	if (s)
 	{
 		s->id = id;
-		s->max = maxlen;
-		s->length = 0;
-		s->stack = (int *)ft_calloc(maxlen, sizeof(int));
-		if (!s->stack)
-			free_stack(s);
+		s->size = 0;
+		s->top = NULL;
 	}
 	return (s);
 }

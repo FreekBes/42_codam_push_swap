@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:05:37 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:36:34 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 
 void	rotate(t_stack *s)
 {
-	int		temp;
+	t_frame		*temp;
 
-	if (s->length > 1)
+	if (s->size > 1)
 	{
-		temp = s->stack[s->length - 1];
-		ft_memmove(&(s->stack[1]), s->stack, sizeof(int) * (s->length - 1));
-		s->stack[0] = temp;
+		temp = s->top;
+		s->top = temp->next;
+		temp->next = NULL;
+		get_stack_bottom(s)->next = temp;
 	}
 }
 

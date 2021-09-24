@@ -6,29 +6,36 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:14:36 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:43:30 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+typedef struct s_frame
+{
+	int				num;
+	struct s_frame	*next;
+}				t_frame;
+
 typedef struct s_stack
 {
 	char		id;
-	int			max;
-	int			length;
-	int			*stack;
+	int			size;
+	t_frame		*top;
 }				t_stack;
 
-t_stack			*new_stack(char id, int maxlen);
+t_stack			*new_stack(char id);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);
+void			debug_stack(t_stack *s);
+t_frame			*get_stack_frame(t_stack *s, int index);
+t_frame			*get_stack_bottom(t_stack *s);
 int				ps_atoi(char *s, int *n);
 int				is_dup(t_stack *s, int n);
-void			push(t_stack *s, int n);
-void			unshift(t_stack *s, int n);
-void			pop(t_stack *s);
+int				push(t_stack *s, int n);
+t_frame			*pop(t_stack *s);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);
 void			reverse(t_stack *s);

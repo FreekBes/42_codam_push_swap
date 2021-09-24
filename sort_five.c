@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 12:51:24 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 17:02:38 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:19:06 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	sort_five(t_stack *a, t_stack *b)
 {
 	int		i;
 
-	while (a->length > 3)
+	write(1, "sortfive", 8);
+	while (a->size > 3)
 		pb(a, b);
 	while (!is_sorted(a, 0))
 		sort_three(a);
@@ -25,11 +26,11 @@ void	sort_five(t_stack *a, t_stack *b)
 		sort_three(b);
 	print_stack(a);
 	i = 0;
-	while (b->length > 0)
+	while (b->size > 0)
 	{
-		if (a->stack[0] < b->stack[b->length - 1])
+		if (get_stack_bottom(a)->num < b->top->num)
 		{
-			while (i < a->length)
+			while (i < a->size)
 			{
 				ra(a);
 				print_stack(a);
@@ -38,7 +39,7 @@ void	sort_five(t_stack *a, t_stack *b)
 		}
 		else
 		{
-			while (a->stack[a->length - 1] < b->stack[b->length - 1])
+			while (a->top->num < get_stack_bottom(b)->num)
 			{
 				ra(a);
 				print_stack(a);

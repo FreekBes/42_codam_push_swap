@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:00:33 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 15:49:10 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int	is_dup(t_stack *s, int n)
 {
-	int		i;
+	t_frame		*temp;
 
-	i = s->max - 1;
-	while (i >= s->max - s->length)
+	temp = s->top;
+	while (temp)
 	{
-		if (n == s->stack[i])
+		if (temp->num == n)
 			return (1);
-		i--;
+		temp = temp->next;
 	}
 	return (0);
 }

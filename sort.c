@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 10:55:00 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 13:00:25 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:21:24 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int	operate(t_stack *a, t_stack *b)
 {
-	if (b->length == 0 && is_sorted(a, 0))
+	if (b->size == 0 && is_sorted(a, 0))
 		return (0);
-	if (a->length == 3)
+	if (a->size == 3)
 		sort_three(a);
-	else if (a->length <= 5)
+	else if (a->size <= 5)
 		sort_five(a, b);
 	return (1);
 }

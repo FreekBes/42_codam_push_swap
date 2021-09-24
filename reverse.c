@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:05:02 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 16:43:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 
 void	reverse(t_stack *s)
 {
-	int		temp;
+	t_frame		*temp;
 
-	if (s->length > 1)
+	if (s->size > 1)
 	{
-		temp = s->stack[0];
-		ft_memmove(s->stack, &(s->stack[1]), sizeof(int) * (s->length - 1));
-		s->stack[s->length - 1] = temp;
+		temp = get_stack_bottom(s);
+		temp->next = s->top;
+		s->top = temp;
+		get_stack_frame(s, s->size - 1)->next = NULL;
 	}
 }
 

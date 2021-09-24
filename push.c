@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/20 12:04:03 by fbes          ########   odam.nl         */
+/*   Updated: 2021/09/24 15:50:26 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 #include "libft/libft.h"
 #include <unistd.h>
 
-void	push(t_stack *s, int n)
+int	push(t_stack *s, int n)
 {
-	if (s->length < s->max)
+	t_frame		*frame;
+
+	frame = malloc(sizeof(t_frame));
+	if (frame)
 	{
-		s->stack[s->length] = n;
-		s->length++;
+		frame->num = n;
+		frame->next = s->top;
+		s->top = frame;
+		s->size += 1;
+		return (1);
 	}
-	else
-		s->stack[s->length - 1] = n;
+	return (0);
 }
 
 void	pa(t_stack *a, t_stack *b)
 {
-	if (b->length > 0)
+	if (b->size > 0)
 	{
-		push(a, b->stack[b->length - 1]);
+		push(a, b->top->num);
 		pop(b);
 		write(1, "pa\n", 3);
 	}
@@ -37,9 +42,9 @@ void	pa(t_stack *a, t_stack *b)
 
 void	pb(t_stack *a, t_stack *b)
 {
-	if (a->length > 0)
+	if (a->size > 0)
 	{
-		push(b, a->stack[a->length - 1]);
+		push(b, a->top->num);
 		pop(a);
 		write(1, "pb\n", 3);
 	}
@@ -47,9 +52,9 @@ void	pb(t_stack *a, t_stack *b)
 
 void	pf(t_stack *s1, t_stack *s2)
 {
-	if (s1->length > 0)
+	if (s1->size > 0)
 	{
-		push(s2, s1->stack[s1->length - 1]);
+		push(s2, s1->top->num);
 		pop(s1);
 		write(1, "p", 1);
 		write(1, &(s2->id), 1);

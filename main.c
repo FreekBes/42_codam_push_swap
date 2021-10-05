@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:40:08 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/05 22:31:31 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ int	main(int argc, char **argv)
 	b = new_stack('b');
 	if (a && b)
 	{
-		i = 1;
-		while (i < argc)
+		i = argc - 1;
+		while (i > 0)
 		{
 			if (!ps_atoi(argv[i], &n))
 				return (print_error(a, b));
 			if (is_dup(a, n))
 				return (print_error(a, b));
 			push(a, n);
-			i++;
+			i--;
 		}
 		debug_stack(a);
 		debug_stack(b);

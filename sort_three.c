@@ -6,11 +6,19 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 17:59:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/05 22:55:01 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 23:00:22 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	sort_two(t_stack *s)
+{
+	if (s->size != 2)
+		return ;
+	if (s->top->num > s->top->next->num)
+		rf(s);
+}
 
 void	sort_three(t_stack *s)
 {
@@ -19,6 +27,8 @@ void	sort_three(t_stack *s)
 	int		n3;
 
 	debug_stack(s);
+	if (s->size < 3)
+		sort_two(s);
 	if (s->size != 3)
 		return ;
 	n1 = s->top->num;

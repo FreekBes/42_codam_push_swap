@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 12:51:24 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/06 22:50:14 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 23:10:30 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ void	sort_five(t_stack *a, t_stack *b)
 		pb(a, b);
 	while (!is_sorted(a, 1))
 		sort_three(a);
+	while (!is_sorted(b, 1))
+		sort_three(b);
 	ft_putendl_fd("sortfive", 1);
 	print_stack(a);
 	print_stack(b);
+
+
+	// NEW VERSION
 	steps_taken = 0;
 	while (b->size > 0)
 	{
@@ -103,8 +108,11 @@ void	sort_five(t_stack *a, t_stack *b)
 	debug_stack(a);
 	debug_stack(b);
 
-
-	/*
+/*
+	// OLD VERSION
+	i = 0;
+	while (b->size > 0)
+	{
 		if (get_stack_bottom(a)->num < b->top->num)
 		{
 			while (i < a->size)
@@ -123,6 +131,7 @@ void	sort_five(t_stack *a, t_stack *b)
 				i++;
 			}
 		}
+		ft_putstr_fd(">>>PUSH\t", 1);
 		pa(a, b);
 		print_stack(a);
 	}

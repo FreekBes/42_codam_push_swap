@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 12:51:24 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/06 22:32:50 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 22:50:14 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,26 @@ void	sort_five(t_stack *a, t_stack *b)
 	steps_taken = 0;
 	while (b->size > 0)
 	{
-		steps_front = 0;
-		steps_back = 0;
-		frame = a->top;
 		biggest = get_stack_biggest(a);
+		ft_putstr_fd("biggest num in a: ", 1);
 		ft_putnbr_fd(biggest->num, 1);
+		ft_putchar_fd('\n', 1);
 		if (biggest->num > b->top->num)
 		{
-			while (steps_front < a->size && b->top->num > frame->num)
-			{
+			steps_front = 0;
+			frame = a->top;
+			// bug is probably in below line
+			// debug with [5, 25, 6, 763, 2]
+			// should check if number before it is actually smaller
+			// is hard to do when it is the first number but the list needs
+			// to be rotated because of steps_taken in the end...
+			// plus frame->prev is sometimes NULL
+			while (steps_front < a->size && b->top->num > frame->num) {
 				frame = frame->next;
 				steps_front++;
 			}
 			frame = get_stack_bottom(a);
+			steps_back = 0;
 			while (steps_back < a->size && b->top->num < frame->num)
 			{
 				frame = frame->prev;

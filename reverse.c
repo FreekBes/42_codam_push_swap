@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:43:51 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 21:27:56 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	reverse(t_stack *s)
 		temp->next = s->top;
 		s->top = temp;
 		get_stack_frame(s, s->size - 1)->next = NULL;
+		s->top->prev = NULL;
+		s->top->next->prev = s->top;
 	}
 }
 

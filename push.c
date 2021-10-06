@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 15:50:26 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 19:29:47 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int	push(t_stack *s, int n)
 	{
 		frame->num = n;
 		frame->next = s->top;
+		frame->prev = NULL;
+		if (s->top != NULL)
+			s->top->prev = frame;
 		s->top = frame;
 		s->size += 1;
 		return (1);

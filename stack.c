@@ -6,12 +6,13 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:45:24 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 22:12:24 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+#include <limits.h>
 
 void	print_stack(t_stack *s)
 {
@@ -34,6 +35,8 @@ static void	print_frame(t_frame *f)
 {
 	ft_putstr_fd("num: ", 1);
 	ft_putnbr_fd(f->num, 1);
+	ft_putstr_fd(", prev: 0x", 1);
+	ft_putnbr_base_fd((unsigned int)(f->prev), "0123456789ABCDEF", 1);
 	ft_putstr_fd(", next: 0x", 1);
 	ft_putnbr_base_fd((unsigned int)(f->next), "0123456789ABCDEF", 1);
 	ft_putchar_fd('\n', 1);
@@ -60,6 +63,11 @@ void	debug_stack(t_stack *s)
 		print_frame(frame);
 		frame = frame->next;
 		i++;
+		if (i > s->size)
+		{
+			ft_putendl_fd("WARNING: LINKED LIST RELINKS!!", 1);
+			break ;
+		}
 	}
 	ft_putendl_fd("====================\n", 1);
 }
@@ -83,6 +91,22 @@ void	free_stack(t_stack *s)
 	}
 }
 
+t_frame	*get_stack_biggest(t_stack *s)
+{
+	t_frame		*frame;
+	t_frame		*biggest;
+
+	frame = s->top;
+	biggest = frame;
+	while (frame)
+	{
+		if (frame->num >= biggest->num)
+			biggest = frame;
+		frame = frame->next;
+	}
+	return (biggest);
+}
+
 t_frame	*get_stack_bottom(t_stack *s)
 {
 	t_frame		*frame;
@@ -102,11 +126,9 @@ t_frame	*get_stack_frame(t_stack *s, int index)
 		return (NULL);
 	j = 0;
 	frame = s->top;
-	while (j < index)
+	while (j < index && frame)
 	{
 		frame = frame->next;
-		if (!frame)
-			return (NULL);
 		j++;
 	}
 	return (frame);

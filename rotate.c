@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:36:34 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 21:17:03 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,17 @@
 void	rotate(t_stack *s)
 {
 	t_frame		*temp;
+	t_frame		*bottom;
 
 	if (s->size > 1)
 	{
 		temp = s->top;
 		s->top = temp->next;
+		s->top->prev = NULL;
 		temp->next = NULL;
-		get_stack_bottom(s)->next = temp;
+		bottom = get_stack_bottom(s);
+		temp->prev = bottom;
+		bottom->next = temp;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:58:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 15:03:26 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 21:15:00 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ t_frame	*pop(t_stack *s)
 	popped = s->top;
 	s->top = popped->next;
 	s->size -= 1;
+	if (s->top)
+		s->top->prev = NULL;
 	return (popped);
 }

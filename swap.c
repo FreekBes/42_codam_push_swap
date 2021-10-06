@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 15:10:35 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 19:31:28 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 void	swap(t_stack *s)
 {
 	t_frame		*temp;
-	t_frame		*temp_next;
 
 	if (s->size > 1)
 	{
 		temp = s->top;
 		s->top = temp->next;
-		temp_next = s->top->next;
+		temp->next = s->top->next;
 		s->top->next = temp;
-		s->top->next->next = temp_next;
+		s->top->prev = NULL;
+		s->top->next->prev = s->top;
+		s->top->next->next->prev = s->top->next;
 	}
 }
 

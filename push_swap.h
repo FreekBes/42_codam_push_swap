@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:43:30 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/06 22:00:02 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct s_frame
 {
 	int				num;
+	struct s_frame	*prev;
 	struct s_frame	*next;
 }				t_frame;
 
@@ -32,6 +33,7 @@ void			print_stack(t_stack *s);
 void			debug_stack(t_stack *s);
 t_frame			*get_stack_frame(t_stack *s, int index);
 t_frame			*get_stack_bottom(t_stack *s);
+t_frame			*get_stack_biggest(t_stack *s);
 int				ps_atoi(char *s, int *n);
 int				is_dup(t_stack *s, int n);
 int				push(t_stack *s, int n);

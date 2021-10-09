@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/09 15:12:25 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/09 15:14:36 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ int	main(int argc, char **argv)
 				j = 0;
 				while (spl[j])
 					j++;
+				if (j == 0)
+				{
+					ft_free_double_ptr((void **)spl);
+					return (print_error(a, b));
+				}
 				while (j > 0)
 				{
 					if (parse_num(a, &n, spl[j - 1], 0) > 0)

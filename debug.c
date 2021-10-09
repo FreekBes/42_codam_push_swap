@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 15:42:21 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/09 15:43:08 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/09 15:47:36 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ void	debug_stack(t_stack *s)
 	t_frame		*frame;
 	int			i;
 
-	ft_putendl_fd("====================", 1);
-	ft_putstr_fd("DEBUG STACK ", 1);
+	ft_putstr_fd("====================\nDEBUG STACK ", 1);
 	ft_putchar_fd(s->id, 1);
 	ft_putchar_fd('\n', 1);
 	frame = s->top;
@@ -64,7 +63,7 @@ void	debug_stack(t_stack *s)
 		i++;
 		if (i > s->size)
 		{
-			ft_putendl_fd("WARNING: LINKED LIST RELINKS!!", 1);
+			ft_putendl_fd("[WARNING] LINKED LIST RELINKS!!", 1);
 			break ;
 		}
 	}

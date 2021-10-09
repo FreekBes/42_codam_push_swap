@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:35:23 by fbes          #+#    #+#                 */
-/*   Updated: 2021/05/19 10:55:52 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/09 14:59:22 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ char			*ft_strdup(const char *src);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
-char			*ft_strtrimstr(char const *s1, char const *s2);
-char			**ft_splitset(char const *s, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));

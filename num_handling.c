@@ -6,14 +6,14 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 15:49:10 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/09 15:41:13 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-int	is_dup(t_stack *s, int n)
+static int	is_dup(t_stack *s, int n)
 {
 	t_frame		*temp;
 
@@ -27,7 +27,7 @@ int	is_dup(t_stack *s, int n)
 	return (0);
 }
 
-int	ps_atoi(char *s, int *n)
+static int	ps_atoi(char *s, int *n)
 {
 	long long	num;
 	int			neg;
@@ -49,5 +49,16 @@ int	ps_atoi(char *s, int *n)
 		i++;
 	}
 	*n = (int)(num * neg);
+	return (1);
+}
+
+int	parse_num(t_stack *a, int *n, char *s)
+{
+	if (ft_strlen(s) == 0)
+		return (-1);
+	if (!ps_atoi(s, n))
+		return (-1);
+	if (is_dup(a, *n))
+		return (-1);
 	return (1);
 }

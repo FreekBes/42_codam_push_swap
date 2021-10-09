@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/09 15:14:36 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/09 15:40:56 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,56 @@ static int	print_error(t_stack *a, t_stack *b)
 	return (0);
 }
 
-static int	parse_num(t_stack *a, int *n, char *s, int free_after)
+static int	parse_space_sep_str_err(t_stack *a, t_stack *b, char **spl)
 {
-	if (ft_strlen(s) == 0)
-		return (-1);
-	if (!ps_atoi(s, n))
-		return (-1);
-	if (is_dup(a, *n))
-		return (-1);
+	ft_free_double_ptr((void **)spl);
+	return (print_error(a, b));
+}
+
+static int	parse_space_sep_str(t_stack *a, t_stack *b, char *s, int *n)
+{
+	char	**spl;
+	int		i;
+
+	spl = ft_split(s, ' ');
+	if (!spl)
+		return (print_error(a, b));
+	i = 0;
+	while (spl[i])
+		i++;
+	if (i == 0)
+		parse_space_sep_str_err(a, b, spl);
+	while (i > 0)
+	{
+		if (parse_num(a, n, spl[i - 1]) > 0)
+			push(a, *n);
+		else
+			parse_space_sep_str_err(a, b, spl);
+		i--;
+	}
+	ft_free_double_ptr((void **)spl);
+	return (1);
+}
+
+static int	handle_argv(t_stack *a, t_stack *b, int argc, char **argv)
+{
+	int		i;
+	int		n;
+
+	i = argc - 1;
+	while (i > 0)
+	{
+		if (ft_strchr(argv[i], ' '))
+			parse_space_sep_str(a, b, argv[i], &n);
+		else
+		{
+			if (parse_num(a, &n, argv[i]) > 0)
+				push(a, n);
+			else
+				return (print_error(a, b));
+		}
+		i--;
+	}
 	return (1);
 }
 
@@ -39,10 +81,7 @@ int	main(int argc, char **argv)
 {
 	t_stack		*a;
 	t_stack		*b;
-	char		**spl;
 	int			i;
-	int			j;
-	int			n;
 
 	if (argc < 2)
 		return (print_error(NULL, NULL));
@@ -50,46 +89,10 @@ int	main(int argc, char **argv)
 	b = new_stack('b');
 	if (a && b)
 	{
-		i = argc - 1;
-		while (i > 0)
-		{
-			if (ft_strchr(argv[i], ' '))
-			{
-				spl = ft_split(argv[i], ' ');
-				if (!spl)
-					return (print_error(a, b));
-				j = 0;
-				while (spl[j])
-					j++;
-				if (j == 0)
-				{
-					ft_free_double_ptr((void **)spl);
-					return (print_error(a, b));
-				}
-				while (j > 0)
-				{
-					if (parse_num(a, &n, spl[j - 1], 0) > 0)
-						push(a, n);
-					else
-					{
-						ft_free_double_ptr((void **)spl);
-						return (print_error(a, b));
-					}
-					j--;
-				}
-				ft_free_double_ptr((void **)spl);
-			}
-			else
-			{
-				if (parse_num(a, &n, argv[i], 0) > 0)
-					push(a, n);
-				else
-					return (print_error(a, b));
-			}
-			i--;
-		}
+		handle_argv(a, b, argc, argv);
 		debug_stack(a);
 		debug_stack(b);
+		i = 0;
 		while (operate(a, b))
 			i++;
 		debug_stack(a);

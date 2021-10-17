@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 17:59:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/06 23:00:22 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/17 19:07:27 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	sort_three(t_stack *s)
 	int		n2;
 	int		n3;
 
-	debug_stack(s);
 	if (s->size < 3)
 		sort_two(s);
 	if (s->size != 3)

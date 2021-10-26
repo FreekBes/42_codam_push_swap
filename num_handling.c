@@ -6,12 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/09 15:41:13 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/26 22:08:56 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
+#include "libft.h"
 
 static int	is_dup(t_stack *s, int n)
 {

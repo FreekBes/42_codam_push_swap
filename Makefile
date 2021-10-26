@@ -6,7 +6,7 @@
 #    By: fbes <fbes@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/06/10 17:22:54 by fbes          #+#    #+#                  #
-#    Updated: 2021/10/17 19:09:10 by fbes          ########   odam.nl          #
+#    Updated: 2021/10/26 22:10:05 by fbes          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ CFLAGS =
 all: $(NAME)
 
 $(NAME): libft $(OBJS)
-	$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -I libft libft/libft.a -o $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -I libft
 
 libft: FORCE
 	make -C libft

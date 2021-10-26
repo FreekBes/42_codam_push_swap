@@ -6,12 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 12:51:24 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/17 19:07:22 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/26 22:08:56 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
+#include "libft.h"
 
 static void	push_smallest_to_b(t_stack *a, t_stack *b)
 {

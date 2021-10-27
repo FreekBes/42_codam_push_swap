@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 19:17:33 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 20:05:22 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 20:09:42 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void	index_next(const int i, t_stack *s)
 	t_link	*smallest;
 	t_link	*biggest;
 
-	current = s->top;
 	smallest = NULL;
 	biggest = NULL;
+	current = s->top;
 	while (current)
 	{
 		if (current->id > -1)
@@ -45,7 +45,7 @@ void	index_stack(t_stack *s)
 	int		to;
 
 	i = 0;
-	to = s->size * 0.5 + (s->size % 2);
+	to = s->size * 0.5 + s->size % 2;
 	while (i < to)
 	{
 		index_next(i, s);

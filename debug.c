@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 15:42:21 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 19:50:57 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	print_link(t_link *f)
 {
 	ft_putstr_fd("num: ", 1);
 	ft_putnbr_fd(f->num, 1);
+	ft_putstr_fd(", id: ", 1);
+	ft_putnbr_fd(f->id, 1);
 	ft_putstr_fd(", prev: 0x", 1);
 	ft_putnbr_base_fd((unsigned int)(f->prev), "0123456789ABCDEF", 1);
 	ft_putstr_fd(", next: 0x", 1);

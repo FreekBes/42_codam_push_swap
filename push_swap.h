@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 18:59:27 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 19:51:40 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct s_link
 {
 	int				num;
+	int				id;
 	struct s_link	*prev;
 	struct s_link	*next;
 }				t_link;
@@ -31,13 +32,14 @@ t_stack			*new_stack(char id);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);
 void			debug_stack(t_stack *s);
+void			index_stack(t_stack *s);
 t_link			*get_stack_link(t_stack *s, int index);
 t_link			*get_stack_bottom(t_stack *s);
 t_link			*get_stack_biggest(t_stack *s);
 t_link			*get_stack_smallest(t_stack *s);
 int				get_min_steps_to_reach(t_stack *s, t_link *f);
 int				parse_num(t_stack *a, int *n, char *s);
-int				push(t_stack *s, int n);
+int				push(t_stack *s, int n, int id);
 t_link			*pop(t_stack *s);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);

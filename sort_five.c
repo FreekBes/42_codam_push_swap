@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 12:51:24 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/26 22:08:56 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static void	push_smallest_to_b(t_stack *a, t_stack *b)
 {
-	t_frame	*smallest;
+	t_link	*smallest;
 	int		steps;
 
 	smallest = get_stack_smallest(a);

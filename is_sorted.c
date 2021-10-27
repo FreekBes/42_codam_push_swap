@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 18:21:19 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/24 16:20:02 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	is_sorted(t_stack *s, int dir)
 {
-	t_frame		*frame;
+	t_link		*frame;
 
 	if (s->size < 2)
 		return (1);

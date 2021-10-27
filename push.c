@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/26 22:08:56 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	push(t_stack *s, int n)
 {
-	t_frame		*frame;
+	t_link		*frame;
 
-	frame = malloc(sizeof(t_frame));
+	frame = malloc(sizeof(t_link));
 	if (frame)
 	{
 		frame->num = n;

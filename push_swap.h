@@ -6,39 +6,39 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/17 18:27:30 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:59:27 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_frame
+typedef struct s_link
 {
 	int				num;
-	struct s_frame	*prev;
-	struct s_frame	*next;
-}				t_frame;
+	struct s_link	*prev;
+	struct s_link	*next;
+}				t_link;
 
 typedef struct s_stack
 {
 	char		id;
 	int			size;
-	t_frame		*top;
+	t_link		*top;
 }				t_stack;
 
 t_stack			*new_stack(char id);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);
 void			debug_stack(t_stack *s);
-t_frame			*get_stack_frame(t_stack *s, int index);
-t_frame			*get_stack_bottom(t_stack *s);
-t_frame			*get_stack_biggest(t_stack *s);
-t_frame			*get_stack_smallest(t_stack *s);
-int				get_min_steps_to_reach(t_stack *s, t_frame *f);
+t_link			*get_stack_link(t_stack *s, int index);
+t_link			*get_stack_bottom(t_stack *s);
+t_link			*get_stack_biggest(t_stack *s);
+t_link			*get_stack_smallest(t_stack *s);
+int				get_min_steps_to_reach(t_stack *s, t_link *f);
 int				parse_num(t_stack *a, int *n, char *s);
 int				push(t_stack *s, int n);
-t_frame			*pop(t_stack *s);
+t_link			*pop(t_stack *s);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);
 void			reverse(t_stack *s);

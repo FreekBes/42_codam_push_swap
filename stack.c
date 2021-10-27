@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/17 19:08:50 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 void	free_stack(t_stack *s)
 {
-	t_frame		*frame;
-	t_frame		*next_frame;
+	t_link		*frame;
+	t_link		*next_link;
 
 	if (s)
 	{
 		frame = s->top;
 		while (frame)
 		{
-			next_frame = frame->next;
+			next_link = frame->next;
 			free(frame);
-			frame = next_frame;
+			frame = next_link;
 		}
 		free(s);
 		s = NULL;

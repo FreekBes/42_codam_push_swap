@@ -1,6 +1,3 @@
-- get three numbers working
-- figure out the steps for five numbers
 - take a look at the bit shifting part of this https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
 - implement that
 - implement a step optimizer: instead of writing steps to output directly, store them in linked list, optimizing the values (combining steps)
-- make sure one string with nums also works (./push_swap "1 2 3")

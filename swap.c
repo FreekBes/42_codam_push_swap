@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/26 22:08:56 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	swap(t_stack *s)
 {
-	t_frame		*temp;
+	t_link		*temp;
 
 	if (s->size > 1)
 	{

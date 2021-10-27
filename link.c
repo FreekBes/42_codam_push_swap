@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   frame.c                                            :+:    :+:            */
+/*   link.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -13,10 +13,10 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
-t_frame	*get_stack_biggest(t_stack *s)
+t_link	*get_stack_biggest(t_stack *s)
 {
-	t_frame		*frame;
-	t_frame		*biggest;
+	t_link		*frame;
+	t_link		*biggest;
 
 	frame = s->top;
 	biggest = frame;
@@ -29,10 +29,10 @@ t_frame	*get_stack_biggest(t_stack *s)
 	return (biggest);
 }
 
-t_frame	*get_stack_smallest(t_stack *s)
+t_link	*get_stack_smallest(t_stack *s)
 {
-	t_frame		*frame;
-	t_frame		*smallest;
+	t_link		*frame;
+	t_link		*smallest;
 
 	frame = s->top;
 	smallest = frame;
@@ -45,9 +45,9 @@ t_frame	*get_stack_smallest(t_stack *s)
 	return (smallest);
 }
 
-int	get_min_steps_to_reach(t_stack *s, t_frame *f)
+int	get_min_steps_to_reach(t_stack *s, t_link *f)
 {
-	t_frame		*temp;
+	t_link		*temp;
 	int			steps_front;
 	int			steps_back;
 
@@ -71,9 +71,9 @@ int	get_min_steps_to_reach(t_stack *s, t_frame *f)
 		return (-steps_back);
 }
 
-t_frame	*get_stack_bottom(t_stack *s)
+t_link	*get_stack_bottom(t_stack *s)
 {
-	t_frame		*frame;
+	t_link		*frame;
 
 	frame = s->top;
 	while (frame->next)
@@ -81,9 +81,9 @@ t_frame	*get_stack_bottom(t_stack *s)
 	return (frame);
 }
 
-t_frame	*get_stack_frame(t_stack *s, int index)
+t_link	*get_stack_link(t_stack *s, int index)
 {
-	t_frame		*frame;
+	t_link		*frame;
 	int			j;
 
 	if (index >= s->size)

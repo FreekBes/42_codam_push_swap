@@ -6,13 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 19:29:54 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:30:29 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft.h"
-#include <unistd.h>
+#include "push_swap.h"
 
 int	push(t_stack *s, int n, int id)
 {
@@ -64,4 +63,30 @@ void	pf(t_stack *s1, t_stack *s2)
 		write(1, &(s2->id), 1);
 		write(1, "\n", 1);
 	}
+}
+
+void	push_smallest_to_b(t_stack *a, t_stack *b)
+{
+	t_link	*smallest;
+	int		steps;
+
+	smallest = get_stack_smallest(a);
+	steps = get_min_steps_to_reach(a, smallest);
+	if (steps > 0)
+	{
+		while (steps > 0)
+		{
+			ra(a);
+			steps--;
+		}
+	}
+	else if (steps < 0)
+	{
+		while (steps < 0)
+		{
+			rra(a);
+			steps++;
+		}
+	}
+	pb(a, b);
 }

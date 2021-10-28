@@ -6,12 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 19:17:33 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 20:09:42 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:28:20 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "push_swap.h"
-#include <unistd.h>
 
 static void	index_next(const int i, t_stack *s)
 {

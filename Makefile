@@ -6,15 +6,14 @@
 #    By: fbes <fbes@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/06/10 17:22:54 by fbes          #+#    #+#                  #
-#    Updated: 2021/10/28 19:50:10 by fbes          ########   odam.nl          #
+#    Updated: 2021/10/28 20:30:42 by fbes          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			push_swap
 
 SRCS =			main.c num_handling.c stack.c push.c reverse.c rotate.c swap.c \
-				pop.c sort.c sort_three.c sort_five.c is_sorted.c debug.c \
-				link.c indexes.c radix.c
+				pop.c sort.c is_sorted.c debug.c link.c indexes.c
 
 OBJS =			$(SRCS:.c=.o)
 

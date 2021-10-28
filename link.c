@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "push_swap.h"
-#include <stdlib.h>
 
 t_link	*get_stack_biggest(t_stack *s)
 {

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:12:53 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:20:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	main(int argc, char **argv)
 {
 	t_stack		*a;
 	t_stack		*b;
-	int			i;
 
 	if (argc < 2)
 		return (print_error(NULL, NULL));
@@ -91,9 +90,7 @@ int	main(int argc, char **argv)
 	{
 		handle_argv(a, b, argc, argv);
 		index_stack(a);
-		i = 0;
-		while (operate(a, b))
-			i++;
+		sort(a, b);
 	}
 	free_stack(a);
 	free_stack(b);

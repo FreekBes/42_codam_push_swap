@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:03:23 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:28:12 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,18 @@ t_link			*get_stack_smallest(t_stack *s);
 int				get_min_steps_to_reach(t_stack *s, t_link *f);
 int				parse_num(t_stack *a, int *n, char *s);
 int				push(t_stack *s, int n, int id);
+void			push_smallest_to_b(t_stack *a, t_stack *b);
 t_link			*pop(t_stack *s);
 void			swap(t_stack *s);
 void			rotate(t_stack *s);
 void			reverse(t_stack *s);
+void			pa(t_stack *a, t_stack *b);
+void			pb(t_stack *a, t_stack *b);
+void			pf(t_stack *a, t_stack *b);
 void			sa(t_stack *a);
 void			sb(t_stack *b);
 void			sf(t_stack *b);
 void			ss(t_stack *a, t_stack *b);
-void			pa(t_stack *a, t_stack *b);
-void			pb(t_stack *a, t_stack *b);
-void			pf(t_stack *a, t_stack *b);
 void			ra(t_stack *a);
 void			rb(t_stack *b);
 void			rf(t_stack *b);
@@ -59,10 +60,7 @@ void			rra(t_stack *a);
 void			rrb(t_stack *b);
 void			rrf(t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
-int				operate(t_stack *a, t_stack *b);
+int				sort(t_stack *a, t_stack *b);
 int				is_sorted(t_stack *s, int dir);
-void			sort_three(t_stack *s);
-void			sort_five(t_stack *a, t_stack *b);
-void			radix_sort(t_stack *a, t_stack *b);
 
 #endif

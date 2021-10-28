@@ -6,13 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:29:50 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
 #include <unistd.h>
+#include "push_swap.h"
 
 void	swap(t_stack *s)
 {

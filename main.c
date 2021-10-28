@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:20:51 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:41:43 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 	t_stack		*b;
 
 	if (argc < 2)
-		return (print_error(NULL, NULL));
+		return (0);
 	a = new_stack('a');
 	b = new_stack('b');
 	if (a && b)

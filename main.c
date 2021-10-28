@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 19:51:48 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:12:53 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,9 @@ int	main(int argc, char **argv)
 	{
 		handle_argv(a, b, argc, argv);
 		index_stack(a);
-		debug_stack(a);
-		debug_stack(b);
 		i = 0;
 		while (operate(a, b))
 			i++;
-		debug_stack(a);
-		debug_stack(b);
 	}
 	free_stack(a);
 	free_stack(b);

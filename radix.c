@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort.c                                             :+:    :+:            */
+/*   radix.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/20 10:55:00 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:03:08 by fbes          ########   odam.nl         */
+/*   Created: 2021/10/28 19:50:05 by fbes          #+#    #+#                 */
+/*   Updated: 2021/10/28 20:09:07 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-int	operate(t_stack *a, t_stack *b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
-	if (b->size == 0 && is_sorted(a, 1))
-		return (0);
-	if (a->size == 3)
-		sort_three(a);
-	else if (a->size <= 5)
-		sort_five(a, b);
-	else
-		radix_sort(a, b);
-	return (1);
+	int		size;
+	int		i;
+	int		j;
+	int		num;
+
+	size = a->size;
+	i = 0;
+	while (!is_sorted(a, 1))
+	{
+		j = 0;
+		while (j < size)
+		{
+			num = a->top->id;
+			if ((num >> i) & 1)
+				ra(a);
+			else
+				pb(a, b);
+			j++;
+		}
+		while (b->size > 0)
+			pa(a, b);
+		i++;
+	}
 }

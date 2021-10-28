@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 19:51:40 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/28 20:03:23 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int				operate(t_stack *a, t_stack *b);
 int				is_sorted(t_stack *s, int dir);
 void			sort_three(t_stack *s);
 void			sort_five(t_stack *a, t_stack *b);
+void			radix_sort(t_stack *a, t_stack *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 10:55:00 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/30 00:44:32 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/30 01:05:12 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static void	radix_sort(t_stack *a, t_stack *b)
 	int		size;
 	int		i;
 	int		j;
-	int		num;
 
 	size = a->size;
 	i = 0;
@@ -69,8 +68,7 @@ static void	radix_sort(t_stack *a, t_stack *b)
 		j = 0;
 		while (j < size)
 		{
-			num = a->top->id;
-			if ((num >> i) & 1)
+			if ((a->top->id >> i) & 1)
 				ra(a);
 			else
 				pb(a, b);

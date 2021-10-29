@@ -15,32 +15,32 @@
 
 t_link	*get_stack_biggest(t_stack *s)
 {
-	t_link		*frame;
+	t_link		*link;
 	t_link		*biggest;
 
-	frame = s->top;
-	biggest = frame;
-	while (frame)
+	link = s->top;
+	biggest = link;
+	while (link)
 	{
-		if (frame->num > biggest->num)
-			biggest = frame;
-		frame = frame->next;
+		if (link->num > biggest->num)
+			biggest = link;
+		link = link->next;
 	}
 	return (biggest);
 }
 
 t_link	*get_stack_smallest(t_stack *s)
 {
-	t_link		*frame;
+	t_link		*link;
 	t_link		*smallest;
 
-	frame = s->top;
-	smallest = frame;
-	while (frame)
+	link = s->top;
+	smallest = link;
+	while (link)
 	{
-		if (frame->num < smallest->num)
-			smallest = frame;
-		frame = frame->next;
+		if (link->num < smallest->num)
+			smallest = link;
+		link = link->next;
 	}
 	return (smallest);
 }
@@ -73,27 +73,27 @@ int	get_min_steps_to_reach(t_stack *s, t_link *f)
 
 t_link	*get_stack_bottom(t_stack *s)
 {
-	t_link		*frame;
+	t_link		*link;
 
-	frame = s->top;
-	while (frame->next)
-		frame = frame->next;
-	return (frame);
+	link = s->top;
+	while (link->next)
+		link = link->next;
+	return (link);
 }
 
 t_link	*get_stack_link(t_stack *s, int index)
 {
-	t_link		*frame;
+	t_link		*link;
 	int			j;
 
 	if (index >= s->size)
 		return (NULL);
 	j = 0;
-	frame = s->top;
-	while (j < index && frame)
+	link = s->top;
+	while (j < index && link)
 	{
-		frame = frame->next;
+		link = link->next;
 		j++;
 	}
-	return (frame);
+	return (link);
 }

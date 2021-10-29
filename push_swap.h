@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:28:12 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/29 20:11:03 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_link			*get_stack_biggest(t_stack *s);
 t_link			*get_stack_smallest(t_stack *s);
 int				get_min_steps_to_reach(t_stack *s, t_link *f);
 int				parse_num(t_stack *a, int *n, char *s);
-int				push(t_stack *s, int n, int id);
+int				push(t_stack *s, t_link *link, int n);
 void			push_smallest_to_b(t_stack *a, t_stack *b);
 t_link			*pop(t_stack *s);
 void			swap(t_stack *s);

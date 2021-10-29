@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:41:43 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/29 20:10:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	parse_space_sep_str(t_stack *a, t_stack *b, char *s, int *n)
 	while (i > 0)
 	{
 		if (parse_num(a, n, spl[i - 1]) > 0)
-			push(a, *n, -1);
+			push(a, NULL, *n);
 		else
 			parse_space_sep_str_err(a, b, spl);
 		i--;
@@ -68,7 +68,7 @@ static int	handle_argv(t_stack *a, t_stack *b, int argc, char **argv)
 		else
 		{
 			if (parse_num(a, &n, argv[i]) > 0)
-				push(a, n, -1);
+				push(a, NULL, n);
 			else
 				return (print_error(a, b));
 		}

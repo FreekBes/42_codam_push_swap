@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 15:42:21 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 19:50:57 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/29 20:13:45 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 void	print_stack(t_stack *s)
 {
-	t_link		*frame;
+	t_link		*link;
 
 	ft_putchar_fd(s->id, 1);
 	ft_putstr_fd(" TOP (SMALLEST) [", 1);
-	frame = s->top;
-	while (frame)
+	link = s->top;
+	while (link)
 	{
-		ft_putnbr_fd(frame->num, 1);
-		if (frame->next)
+		ft_putnbr_fd(link->num, 1);
+		if (link->next)
 			ft_putstr_fd(", ", 1);
-		frame = frame->next;
+		link = link->next;
 	}
 	ft_putendl_fd("] BOTTOM (BIGGEST)", 1);
 }
@@ -45,23 +45,23 @@ static void	print_link(t_link *f)
 
 void	debug_stack(t_stack *s)
 {
-	t_link		*frame;
+	t_link		*link;
 	int			i;
 
 	ft_putstr_fd("====================\nDEBUG STACK ", 1);
 	ft_putchar_fd(s->id, 1);
 	ft_putchar_fd('\n', 1);
-	frame = s->top;
+	link = s->top;
 	i = 0;
-	while (frame)
+	while (link)
 	{
 		ft_putstr_fd("index ", 1);
 		ft_putnbr_fd(i, 1);
 		ft_putstr_fd(", ptr 0x", 1);
-		ft_putnbr_base_fd((unsigned int)(frame), "0123456789ABCDEF", 1);
+		ft_putnbr_base_fd((unsigned int)(link), "0123456789ABCDEF", 1);
 		ft_putstr_fd("; ", 1);
-		print_link(frame);
-		frame = frame->next;
+		print_link(link);
+		link = link->next;
 		i++;
 		if (i > s->size)
 		{

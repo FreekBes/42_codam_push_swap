@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 20:10:12 by fbes          #+#    #+#                 */
-/*   Updated: 2020/11/01 17:54:31 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/30 00:07:54 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *str, const char *sub, size_t len)
 		return ((char *)str);
 	found_len = 0;
 	i = 0;
-	while (str[i] != '\0' && i < len)
+	while (str[i] != '\0' && i < len - to_find_len - 1)
 	{
 		if (str[i] == sub[found_len])
 			found_len++;

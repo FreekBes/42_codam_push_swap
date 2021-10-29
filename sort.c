@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 10:55:00 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:23:19 by fbes          ########   odam.nl         */
+/*   Updated: 2021/10/30 00:44:32 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	sort_two(t_stack *s)
 {
 	if (s->size != 2)
 		return ;
-	if (s->top->num > s->top->next->num)
+	if (s->top->id > s->top->next->id)
 		rf(s);
 }
 
@@ -28,9 +28,9 @@ static void	sort_three(t_stack *s)
 
 	while (!is_sorted(s, 1))
 	{
-		n1 = s->top->num;
-		n2 = s->top->next->num;
-		n3 = s->top->next->next->num;
+		n1 = s->top->id;
+		n2 = s->top->next->id;
+		n3 = s->top->next->next->id;
 		if (n1 > n2 && n2 < n3 && n3 > n1)
 			sf(s);
 		else if (n1 > n2 && n2 > n3 && n3 < n1)

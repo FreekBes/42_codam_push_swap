@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 22:30:15 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 22:32:17 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ static int	ps_atoi(char *s, int *n)
 	{
 		if (i == 0 && s[i] == '-' && s[i + 1] != '\0')
 			neg = -1;
-		else if (i == 0 && s[i] == '-' && s[i + 1] != '\0')
-			return (0);
 		else if (s[i] >= '0' && s[i] <= '9')
 			num = num * 10 + ((int)s[i] - '0');
 		else

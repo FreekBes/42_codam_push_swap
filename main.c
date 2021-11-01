@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/29 20:10:51 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:23:40 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int	main(int argc, char **argv)
 	if (a && b)
 	{
 		handle_argv(a, b, argc, argv);
-		index_stack(a);
 		sort(a, b);
 	}
 	free_stack(a);

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 18:21:19 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/30 00:40:31 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:24:44 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *s, int dir)
 	{
 		while (link->next)
 		{
-			if (link->next->id < link->id)
+			if (link->next->num < link->num)
 				return (0);
 			link = link->next;
 		}
@@ -35,7 +35,7 @@ int	is_sorted(t_stack *s, int dir)
 	{
 		while (link->next)
 		{
-			if (link->next->id > link->id)
+			if (link->next->num > link->num)
 				return (0);
 			link = link->next;
 		}

@@ -22,7 +22,7 @@ t_link	*get_stack_biggest(t_stack *s)
 	biggest = link;
 	while (link)
 	{
-		if (link->id > biggest->id)
+		if (link->num > biggest->num)
 			biggest = link;
 		link = link->next;
 	}
@@ -38,7 +38,7 @@ t_link	*get_stack_smallest(t_stack *s)
 	smallest = link;
 	while (link)
 	{
-		if (link->id < smallest->id)
+		if (link->num < smallest->num)
 			smallest = link;
 		link = link->next;
 	}

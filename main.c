@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:25:40 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:23:40 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:36:52 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	print_error(t_stack *a, t_stack *b)
 	if (b)
 		free_stack(b);
 	write(2, "Error\n", 6);
-	exit(0);
+	exit(EXIT_FAILURE);
 	return (0);
 }
 
@@ -93,6 +93,6 @@ int	main(int argc, char **argv)
 	}
 	free_stack(a);
 	free_stack(b);
-	exit(0);
-	return (0);
+	exit(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:28:23 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:45:46 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /**
  * Free a stack and all of its links, then set it to NULL
- * @param t_stack *s:	The stack to free
+ * @param *s	The stack to free
  */
 void	free_stack(t_stack *s)
 {
@@ -38,8 +38,8 @@ void	free_stack(t_stack *s)
 
 /**
  * Allocate and populate a new stack
- * @param char id:		The stack's ID (usually 'a' or 'b')
- * @return t_stack*:	A pointer to the created stack
+ * @param id	The stack's ID (usually 'a' or 'b')
+ * @return		A pointer to the created stack
  */
 t_stack	*new_stack(char id)
 {

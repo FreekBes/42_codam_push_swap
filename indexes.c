@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 19:17:33 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 17:45:08 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:47:47 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 /**
  * Adds two indexes to a stack: to the smallest and the biggest numbers
- * @param const int i:	The current iteration in the loop of indexing
- * @param t_stack *s:	The stack to index
+ * @param i		The current iteration in the loop of indexing
+ * @param *s	The stack to index
  */
 static void	index_next(const int i, t_stack *s)
 {
@@ -46,7 +46,7 @@ static void	index_next(const int i, t_stack *s)
 
 /**
  * Adds indexes to a stack
- * @param t_stack *s:	The stack to add indexes to
+ * @param *s	The stack to add indexes to
  */
 void	index_stack(t_stack *s)
 {

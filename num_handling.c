@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 20:58:16 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:37:31 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /**
  * Checks if a number is already in the stack
  * @param t_stack *s:	The stack to check
- * @param int n:		The number to check for
+ * @param n:		The number to check for
  */
 static int	is_dup(t_stack *s, int n)
 {
@@ -35,9 +35,9 @@ static int	is_dup(t_stack *s, int n)
 /**
  * Below method is ft_atoi but modified for push_swap, where it can parse a
  * number outside of int's range, but should return an error then
- * @param char *s:	The string to parse
- * @param int *n:	The int to parse to
- * @return int:		Returns 1 on success, 0 on failure
+ * @param *s:	The string to parse
+ * @param *n:	The int to parse to
+ * @return:		Returns 1 on success, 0 on failure
  */
 static int	ps_atoi(char *s, int *n)
 {
@@ -66,10 +66,10 @@ static int	ps_atoi(char *s, int *n)
 
 /**
  * Parse a number and check for errors
- * @param t_stack *a:	The stack to check for the number to add (no duplicates)
- * @param int *n:		The number to parse to
- * @param char *s:		The string to parse
- * @return int:			Returns 1 on success, -1 on failure
+ * @param *a	The stack to check for the number to add (no duplicates)
+ * @param *n	The number to parse to
+ * @param *s	The string to parse
+ * @return		Returns 1 on success, -1 on failure
  */
 int	parse_num(t_stack *a, int *n, char *s)
 {
@@ -84,8 +84,8 @@ int	parse_num(t_stack *a, int *n, char *s)
 
 /**
  * Check if a string consists only of spaces
- * @param char *s:	The string to check
- * @return int:		Returns 1 if only spaces, 0 if not
+ * @param *s	The string to check
+ * @return		Returns 1 if only spaces, 0 if not
  */
 int	only_spaces(const char *s)
 {

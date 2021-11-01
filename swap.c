@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:40:34 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:29:49 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:46:13 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /**
  * Swap the first two links of a stack
- * @param t_stack *s:	The stack to swap from
+ * @param *s	The stack to swap from
  */
 void	swap(t_stack *s)
 {
@@ -35,7 +35,7 @@ void	swap(t_stack *s)
 
 /**
  * Swap the first two elements of stack A and print sa
- * @param t_stack *a:	Stack A
+ * @param *a	Stack A
  */
 void	sa(t_stack *a)
 {
@@ -45,7 +45,7 @@ void	sa(t_stack *a)
 
 /**
  * Swap the first two elements of stack B and print sb
- * @param t_stack *b:	Stack B
+ * @param *b	Stack B
  */
 void	sb(t_stack *b)
 {
@@ -55,8 +55,8 @@ void	sb(t_stack *b)
 
 /**
  * Swap the first two elements of both stack A and stack B and print ss
- * @param t_stack *a:	Stack A
- * @param t_stack *b:	Stack B
+ * @param *a	Stack A
+ * @param *b	Stack B
  */
 void	ss(t_stack *a, t_stack *b)
 {
@@ -67,7 +67,7 @@ void	ss(t_stack *a, t_stack *b)
 
 /**
  * Swap the first two elements of a stack and print s<s->id>
- * @param t_stack *s:	A stack
+ * @param *s	A stack
  */
 void	sf(t_stack *s)
 {

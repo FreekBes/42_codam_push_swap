@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 20:48:20 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:45:31 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 /**
  * Add a link or a number to the top of a stack
- * @param t_stack *s:	The stack to add the link to
- * @param t_link *link:	The link to add, can be NULL
- * @param int n:		The number to add to the stack in case *link == NULL
- * @return int:			Returns 1 on success, 0 on failure
+ * @param *s		The stack to add the link to
+ * @param *link		The link to add, can be NULL
+ * @param n			The number to add to the stack in case *link == NULL
+ * @return			Returns 1 on success, 0 on failure
  */
 int	push(t_stack *s, t_link *link, int n)
 {
@@ -46,8 +46,8 @@ int	push(t_stack *s, t_link *link, int n)
 
 /**
  * Push the top from stack a to stack B and print pa
- * @param t_stack *a:	The stack to push to
- * @param t_stack *b:	The stack to pop from
+ * @param *a	The stack to push to
+ * @param *b	The stack to pop from
  */
 void	pa(t_stack *a, t_stack *b)
 {
@@ -60,8 +60,8 @@ void	pa(t_stack *a, t_stack *b)
 
 /**
  * Push the top from stack a to stack B and print pb
- * @param t_stack *a:	The stack to pop from
- * @param t_stack *b:	The stack to push to
+ * @param *a	The stack to pop from
+ * @param *b	The stack to push to
  */
 void	pb(t_stack *a, t_stack *b)
 {
@@ -74,8 +74,8 @@ void	pb(t_stack *a, t_stack *b)
 
 /**
  * Push the top from one stack to the other stack and print p<s2->id>
- * @param t_stack *s1:	The stack to pop from
- * @param t_stack *s2:	The stack to push to
+ * @param *s1	The stack to pop from
+ * @param *s2	The stack to push to
  */
 void	pf(t_stack *s1, t_stack *s2)
 {
@@ -90,8 +90,8 @@ void	pf(t_stack *s1, t_stack *s2)
 
 /**
  * Push the smallest link from stack a to stack b with the least amount of steps
- * @param t_stack *a:	Stack A to pop from
- * @param t_stack *b:	Stack B to push to
+ * @param *a	Stack A to pop from
+ * @param *b	Stack B to push to
  */
 void	push_smallest_to_b(t_stack *a, t_stack *b)
 {

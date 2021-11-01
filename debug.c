@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 15:42:21 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 17:44:57 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:47:58 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /**
  * Print a stack on one line, only the numbers
- * @param t_stack *s:	The stack to print
+ * @param *s	The stack to print
  */
 void	print_stack(t_stack *s)
 {
@@ -36,7 +36,7 @@ void	print_stack(t_stack *s)
 
 /**
  * Prints one link in a stack on one line
- * @param t_link *f:	The link to print
+ * @param *f	The link to print
  */
 static void	print_link(t_link *f)
 {
@@ -53,7 +53,7 @@ static void	print_link(t_link *f)
 
 /**
  * Prints a lot of information on a stack in order to debug stuff
- * @param t_stack *s:	The stack to print
+ * @param *s	The stack to print
  */
 void	debug_stack(t_stack *s)
 {

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:25:53 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:47:12 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /**
  * Reverse rotate a stack (shift down all elements by 1, last becomes first one)
- * @param t_stack *s:	The stack to reverse rotate
+ * @param *s	The stack to reverse rotate
  */
 void	reverse(t_stack *s)
 {
@@ -34,7 +34,7 @@ void	reverse(t_stack *s)
 
 /**
  * Reverse rotate stack A and print rra
- * @param t_stack *a:	Stack A
+ * @param *a	Stack A
  */
 void	rra(t_stack *a)
 {
@@ -44,7 +44,7 @@ void	rra(t_stack *a)
 
 /**
  * Reverse rotate stack B and print rrb
- * @param t_stack *A:	Stack B
+ * @param *b	Stack B
  */
 void	rrb(t_stack *b)
 {
@@ -54,8 +54,8 @@ void	rrb(t_stack *b)
 
 /**
  * Reverse rotate both stack A and stack B and print rrr
- * @param t_stack *a:	Stack A
- * @param t_stack *b:	Stack B
+ * @param *a	Stack A
+ * @param *b	Stack B
  */
 void	rrr(t_stack *a, t_stack *b)
 {
@@ -66,7 +66,7 @@ void	rrr(t_stack *a, t_stack *b)
 
 /**
  * Reverse rotate a stack and print rr<s->id>
- * @param t_stack *s:	A stack
+ * @param *s	A stack
  */
 void	rrf(t_stack *s)
 {

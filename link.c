@@ -57,11 +57,11 @@ t_link	*get_stack_smallest(t_stack *s)
 
 /**
  * Get the minimum required steps to reach a link
- * @param t_stack *s:	The stack to check in
- * @param t_link *f:	The link to search for in t_stack *s
- * @return int:			The amount of steps required to reach t_link *f,
- * 						is positive if steps are from the top of the stack,
- * 						is negative if steps are from the back of the stack
+ * @param *s	The stack to check in
+ * @param *f	The link to search for in t_stack *s
+ * @return		The amount of steps required to reach t_link *f,
+ * 				is positive if steps are from the top of the stack,
+ * 				is negative if steps are from the back of the stack
  */
 int	get_min_steps_to_reach(t_stack *s, t_link *f)
 {
@@ -91,8 +91,8 @@ int	get_min_steps_to_reach(t_stack *s, t_link *f)
 
 /**
  * Get the bottom of a stack
- * @param t_stack *s:	The stack to get the bottom of
- * @return t_link*:		The bottom link of the stack
+ * @param *s	The stack to get the bottom of
+ * @return		The bottom link of the stack
  */
 t_link	*get_stack_bottom(t_stack *s)
 {
@@ -106,9 +106,9 @@ t_link	*get_stack_bottom(t_stack *s)
 
 /**
  * Get a link from a stack based on its index number (iterative index, not id)
- * @param t_stack *s:	The stack to iterate over
- * @param int index:	The index at which to return the link
- * @return t_link*:		The link at that index
+ * @param *s		The stack to iterate over
+ * @param index		The index at which to return the link
+ * @return			The link at that index
  */
 t_link	*get_stack_link(t_stack *s, int index)
 {

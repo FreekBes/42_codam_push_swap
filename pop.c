@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:58:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:12:16 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:47:24 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 /**
  * Remove the top link from the stack and then returns said link
- * @param t_stack *s:	The stack to remove the top link of
- * @return t_link*:		The removed link
+ * @param *s	The stack to remove the top link of
+ * @return		The removed link
  */
 t_link	*pop(t_stack *s)
 {

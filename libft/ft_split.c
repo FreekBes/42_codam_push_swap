@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:41:13 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/03 18:22:46 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:25:42 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,13 @@ static char	**splitfree(char **arr, char **p_s, char **p_e, size_t amount)
 	return (NULL);
 }
 
+/**
+ * Split a string on certain characters
+ * @param *s	The string to split
+ * @param c		The character to split the string at
+ * @return		An array of strings containing the split up string,
+ * 				NULL on error, array ends with NULL
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;

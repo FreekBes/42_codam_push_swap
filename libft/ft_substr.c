@@ -6,12 +6,19 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:13:01 by fbes          #+#    #+#                 */
-/*   Updated: 2020/11/01 17:19:56 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:58:40 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Trim a string to a certain length into a newly allocated string
+ * @param *s	The string to trim
+ * @param start	The offset to start at
+ * @param len	The maximum length of the trimmed string
+ * @return		A pointer to the newly allocated, trimmed string
+ */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*dest;

@@ -6,12 +6,20 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 13:18:29 by fbes          #+#    #+#                 */
-/*   Updated: 2020/10/30 14:18:24 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:27:15 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Copy a string and apply a function to every byte
+ * @param *s						The string to copy
+ * @param (*f)(unsigned int, char)	The method to apply to every character,
+ * 									where the unsigned int is the character's
+ * 									position in the string and char is the
+ * 									character
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*res;

@@ -6,12 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 18:42:02 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/25 00:38:25 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:25:01 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Write a number to a file descriptor
+ * @param n		The number to write
+ * @param fd	The file descriptor to write to
+ * @return		The amount of characters written, or -1 on error
+ */
 int	ft_putnbr_fd(int n, int fd)
 {
 	int		writes;

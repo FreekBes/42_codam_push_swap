@@ -6,12 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 21:51:22 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/03 18:21:42 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:24:41 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Write a string to a file descriptor and end with a newline
+ * @param *s	The string to write
+ * @param fd	The file descriptor to write to
+ * @return		The amount of characters written, or -1 on error
+ */
 int	ft_putendl_fd(char *s, int fd)
 {
 	int	written_chars;

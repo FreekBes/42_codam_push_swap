@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 17:49:16 by fbes          #+#    #+#                 */
-/*   Updated: 2021/09/25 00:38:06 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:24:53 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ static int	nbr_loop(unsigned int n, char *base, int base_num, int fd)
 	return (written_chars);
 }
 
+/**
+ * Write a number to a file descriptor in a certain base
+ * @param n			The number to write
+ * @param *base		The base of the number (ex.: "01234567890ABCDEF")
+ * @param fd		The file descriptor to write to
+ * @return			The amount of characters written, or -1 on error
+ */
 int	ft_putnbr_base_fd(unsigned int n, char *base, int fd)
 {
 	int		base_num;

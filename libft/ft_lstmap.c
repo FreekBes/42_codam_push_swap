@@ -6,12 +6,21 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 17:42:36 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/03 18:16:57 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:22:06 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Create a copy of a linked list and apply a method to every element
+ * @param *lst					The list to copy
+ * @param void *(*f)(void *)	The method to apply to every element of the
+ * 								copied list
+ * @param void (*del)(void *)	The method applied to every element before
+ * 								deletion (of the copy) if anything goes wrong
+ * @return						The copied list after the applied method
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;

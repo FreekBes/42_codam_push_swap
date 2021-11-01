@@ -6,12 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 21:00:09 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/30 00:12:14 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:19:24 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Allocate memory and clear it before returning it
+ * @param nmemb		The amount of elements to allocate for
+ * @param size		The size of the elements to allocate for
+ * @return			The allocated memory, NULL on failure
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*ptr;

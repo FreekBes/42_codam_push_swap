@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/17 15:17:14 by fbes          #+#    #+#                 */
-/*   Updated: 2021/05/19 10:56:48 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:18:51 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ static int	ft_is_odd_or_even(int n)
 		return (-1);
 }
 
+/**
+ * Parse a number in a string to an integer
+ * @param *str	The string to parse
+ * @return		The parsed number
+ */
 int	ft_atoi(const char *str)
 {
 	int		num;

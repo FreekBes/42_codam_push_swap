@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/11 00:19:48 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/17 15:20:43 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:24:18 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ static void	ptr_loop(char *ret, intptr_t ptr)
 	}
 }
 
+/**
+ * Convert a pointer to a string
+ * @param ptr	A pointer
+ * @return		The converted string
+ */
 char	*ft_ptoa(intptr_t ptr)
 {
 	char	*ret;

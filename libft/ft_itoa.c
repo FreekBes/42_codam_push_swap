@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 16:32:18 by fbes          #+#    #+#                 */
-/*   Updated: 2021/03/11 01:32:54 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:20:50 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ static char	*ft_itoad(unsigned int n, int neg, int digits)
 	return (res);
 }
 
+/**
+ * Convert a number of base10 into a string
+ * @param n		The number to convert
+ * @return		The converted number in string format, NULL on error
+ */
 char	*ft_itoa(int n)
 {
 	int		digits;

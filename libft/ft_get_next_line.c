@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 15:30:52 by fbes          #+#    #+#                 */
-/*   Updated: 2021/04/15 20:10:56 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:20:09 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,13 @@ static int	handle_buff(char **line, size_t *size,
 	return (0);
 }
 
+/**
+ * Read from a file descriptor, line by line
+ * @param fd		The file descriptor to read from
+ * @param **line	A pointer to the string to inject the line into
+ * @return			Returns 1 if there's more to read, 0 once the input has
+ * 					been read entirely, -1 on error
+ */
 int	ft_get_next_line(int fd, char **line)
 {
 	static void		*buff;

@@ -6,12 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:00:32 by fbes          #+#    #+#                 */
-/*   Updated: 2020/11/01 17:13:18 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 21:26:11 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Join two strings together into a newly allocated string
+ * @param *s1	The string to start with
+ * @param *s2	The string to end with
+ * @return		A pointer to the joined string
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;

@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 17:40:10 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/29 20:11:03 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 20:58:27 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 	t_link		*top;
 }				t_stack;
 
+int				only_spaces(const char *s);
 t_stack			*new_stack(char id);
 void			free_stack(t_stack *s);
 void			print_stack(t_stack *s);

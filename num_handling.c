@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:11:10 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 20:58:16 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,18 @@ int	parse_num(t_stack *a, int *n, char *s)
 	if (is_dup(a, *n))
 		return (-1);
 	return (1);
+}
+
+/**
+ * Check if a string consists only of spaces
+ * @param char *s:	The string to check
+ * @return int:		Returns 1 if only spaces, 0 if not
+ */
+int	only_spaces(const char *s)
+{
+	while (*s == ' ')
+		s++;
+	if (*s == '\0')
+		return (1);
+	return (0);
 }

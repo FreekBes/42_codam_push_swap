@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:53 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 19:25:07 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 20:48:20 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param int n:		The number to add to the stack in case *link == NULL
  * @return int:			Returns 1 on success, 0 on failure
  */
-void	push(t_stack *s, t_link *link, int n)
+int	push(t_stack *s, t_link *link, int n)
 {
 	if (!link)
 	{

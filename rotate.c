@@ -6,13 +6,12 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:29:34 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:18:31 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "push_swap.h"
-
 
 void	rotate(t_stack *s)
 {

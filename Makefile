@@ -6,7 +6,7 @@
 #    By: fbes <fbes@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/06/10 17:22:54 by fbes          #+#    #+#                  #
-#    Updated: 2021/10/28 21:02:15 by fbes          ########   odam.nl          #
+#    Updated: 2021/11/01 16:52:17 by fbes          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS =			main.c num_handling.c stack.c push.c reverse.c rotate.c swap.c \
 
 OBJS =			$(SRCS:.c=.o)
 
-CFLAGS =		-Wall -Werror -Wextra
+CFLAGS =		-Wall -Werror -Wextra -pedantic -std=c89
 
 all: $(NAME)
 

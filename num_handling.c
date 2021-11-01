@@ -6,7 +6,7 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/27 18:58:55 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:51:28 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	is_dup(t_stack *s, int n)
 {
-	t_link		*temp;
+	t_link	*temp;
 
 	temp = s->top;
 	while (temp)
@@ -29,9 +29,9 @@ static int	is_dup(t_stack *s, int n)
 
 static int	ps_atoi(char *s, int *n)
 {
-	long long	num;
-	int			neg;
-	int			i;
+	long	num;
+	int		neg;
+	int		i;
 
 	num = 0;
 	neg = 1;

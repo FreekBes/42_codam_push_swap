@@ -6,14 +6,16 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/24 18:21:19 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:24:44 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:55:41 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// dir > 0: stack s is sorted 0 1 2
-// dir <= 0: stack s is sorted 2 1 0
+/**
+ * dir > 0: stack s is sorted 0 1 2
+ * dir <= 0: stack s is sorted 2 1 0
+ */
 
 int	is_sorted(t_stack *s, int dir)
 {

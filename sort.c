@@ -6,12 +6,16 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 10:55:00 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:26:03 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 17:44:48 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * Sorts a stack of only two numbers
+ * @param t_stack *s:	The stack to sort
+ */
 static void	sort_two(t_stack *s)
 {
 	if (s->size != 2)
@@ -20,6 +24,10 @@ static void	sort_two(t_stack *s)
 		rf(s);
 }
 
+/**
+ * Sorts a stack of only three numbers
+ * @param t_stack *s:	The stack to sort
+ */
 static void	sort_three(t_stack *s)
 {
 	int		n1;
@@ -44,6 +52,11 @@ static void	sort_three(t_stack *s)
 	}
 }
 
+/**
+ * Sorts a stack of up four or five numbers using two stacks
+ * @param t_stack *a:	The stack to sort
+ * @param t_stack *b:	The stack to temporarily use for sorting
+ */
 static void	sort_five(t_stack *a, t_stack *b)
 {
 	if (is_sorted(a, 1))
@@ -55,6 +68,11 @@ static void	sort_five(t_stack *a, t_stack *b)
 		pa(a, b);
 }
 
+/**
+ * Sorts a stack using radix sort using two stacks, supports any stack size
+ * @param t_stack *a:	The stack to sort
+ * @param t_stack *b:	The stack to temporarily use for sorting
+ */
 static void	radix_sort(t_stack *a, t_stack *b)
 {
 	int		size;
@@ -81,6 +99,12 @@ static void	radix_sort(t_stack *a, t_stack *b)
 	}
 }
 
+/**
+ * Initial sorting function that chooses the right algorithm to use based on
+ * the size of the stack to sort
+ * @param t_stack *a:	The stack to sort
+ * @param t_stack *b:	A stack to use temporarily for sorting
+ */
 int	sort(t_stack *a, t_stack *b)
 {
 	if (a->size == 2)

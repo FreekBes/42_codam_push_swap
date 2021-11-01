@@ -6,13 +6,17 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:51 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:18:31 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 19:27:04 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "push_swap.h"
 
+/**
+ * Rotate a stack (shift up all elements by 1, first becomes last one)
+ * @param t_stack *s:	The stack to rotate
+ */
 void	rotate(t_stack *s)
 {
 	t_link		*temp;
@@ -30,18 +34,31 @@ void	rotate(t_stack *s)
 	}
 }
 
+/**
+ * Rotate stack A and print ra
+ * @param t_stack *a:	Stack A
+ */
 void	ra(t_stack *a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
 }
 
+/**
+ * Rotate stack B and print rb
+ * @param t_stack *b:	Stack B
+ */
 void	rb(t_stack *b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
 }
 
+/**
+ * Rotate both stack A and stack B and print rr
+ * @param t_stack *a:	Stack A
+ * @param t_stack *b:	Stack B
+ */
 void	rr(t_stack *a, t_stack *b)
 {
 	rotate(a);
@@ -49,6 +66,10 @@ void	rr(t_stack *a, t_stack *b)
 	write(1, "rr\n", 3);
 }
 
+/**
+ * Rotate a stack and print r<s->id>
+ * @param t_stack *s:	A stack
+ */
 void	rf(t_stack *s)
 {
 	rotate(s);

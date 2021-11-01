@@ -6,13 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 19:17:33 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:28:20 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 17:45:08 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "push_swap.h"
 
+/**
+ * Adds two indexes to a stack: to the smallest and the biggest numbers
+ * @param const int i:	The current iteration in the loop of indexing
+ * @param t_stack *s:	The stack to index
+ */
 static void	index_next(const int i, t_stack *s)
 {
 	t_link	*current;
@@ -39,6 +44,10 @@ static void	index_next(const int i, t_stack *s)
 	biggest->id = s->size - i - 1;
 }
 
+/**
+ * Adds indexes to a stack
+ * @param t_stack *s:	The stack to add indexes to
+ */
 void	index_stack(t_stack *s)
 {
 	int		i;

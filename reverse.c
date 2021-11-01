@@ -6,13 +6,17 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/10 18:41:49 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/28 20:29:13 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 19:25:53 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "push_swap.h"
 
+/**
+ * Reverse rotate a stack (shift down all elements by 1, last becomes first one)
+ * @param t_stack *s:	The stack to reverse rotate
+ */
 void	reverse(t_stack *s)
 {
 	t_link		*temp;
@@ -28,18 +32,31 @@ void	reverse(t_stack *s)
 	}
 }
 
+/**
+ * Reverse rotate stack A and print rra
+ * @param t_stack *a:	Stack A
+ */
 void	rra(t_stack *a)
 {
 	reverse(a);
 	write(1, "rra\n", 4);
 }
 
+/**
+ * Reverse rotate stack B and print rrb
+ * @param t_stack *A:	Stack B
+ */
 void	rrb(t_stack *b)
 {
 	reverse(b);
 	write(1, "rrb\n", 4);
 }
 
+/**
+ * Reverse rotate both stack A and stack B and print rrr
+ * @param t_stack *a:	Stack A
+ * @param t_stack *b:	Stack B
+ */
 void	rrr(t_stack *a, t_stack *b)
 {
 	reverse(a);
@@ -47,6 +64,10 @@ void	rrr(t_stack *a, t_stack *b)
 	write(1, "rrr\n", 4);
 }
 
+/**
+ * Reverse rotate a stack and print rr<s->id>
+ * @param t_stack *s:	A stack
+ */
 void	rrf(t_stack *s)
 {
 	reverse(s);

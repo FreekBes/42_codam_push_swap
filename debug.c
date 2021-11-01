@@ -6,13 +6,17 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 15:42:21 by fbes          #+#    #+#                 */
-/*   Updated: 2021/10/29 20:13:45 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 17:44:57 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
+/**
+ * Print a stack on one line, only the numbers
+ * @param t_stack *s:	The stack to print
+ */
 void	print_stack(t_stack *s)
 {
 	t_link		*link;
@@ -30,6 +34,10 @@ void	print_stack(t_stack *s)
 	ft_putendl_fd("] BOTTOM (BIGGEST)", 1);
 }
 
+/**
+ * Prints one link in a stack on one line
+ * @param t_link *f:	The link to print
+ */
 static void	print_link(t_link *f)
 {
 	ft_putstr_fd("num: ", 1);
@@ -43,6 +51,10 @@ static void	print_link(t_link *f)
 	ft_putchar_fd('\n', 1);
 }
 
+/**
+ * Prints a lot of information on a stack in order to debug stuff
+ * @param t_stack *s:	The stack to print
+ */
 void	debug_stack(t_stack *s)
 {
 	t_link		*link;

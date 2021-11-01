@@ -6,13 +6,18 @@
 /*   By: fbes <fbes@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/17 21:33:05 by fbes          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:51:28 by fbes          ########   odam.nl         */
+/*   Updated: 2021/11/01 19:11:10 by fbes          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
+/**
+ * Checks if a number is already in the stack
+ * @param t_stack *s:	The stack to check
+ * @param int n:		The number to check for
+ */
 static int	is_dup(t_stack *s, int n)
 {
 	t_link	*temp;
@@ -27,6 +32,13 @@ static int	is_dup(t_stack *s, int n)
 	return (0);
 }
 
+/**
+ * Below method is ft_atoi but modified for push_swap, where it can parse a
+ * number outside of int's range, but should return an error then
+ * @param char *s:	The string to parse
+ * @param int *n:	The int to parse to
+ * @return int:		Returns 1 on success, 0 on failure
+ */
 static int	ps_atoi(char *s, int *n)
 {
 	long	num;
@@ -52,6 +64,13 @@ static int	ps_atoi(char *s, int *n)
 	return (1);
 }
 
+/**
+ * Parse a number and check for errors
+ * @param t_stack *a:	The stack to check for the number to add (no duplicates)
+ * @param int *n:		The number to parse to
+ * @param char *s:		The string to parse
+ * @return int:			Returns 1 on success, -1 on failure
+ */
 int	parse_num(t_stack *a, int *n, char *s)
 {
 	if (ft_strlen(s) == 0)

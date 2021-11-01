@@ -13,6 +13,11 @@
 #include <stddef.h>
 #include "push_swap.h"
 
+/**
+ * Get the biggest link in a stack
+ * @param t_stack *s:	The stack to check
+ * @return t_link*:		The smallest link
+ */
 t_link	*get_stack_biggest(t_stack *s)
 {
 	t_link		*link;
@@ -29,6 +34,11 @@ t_link	*get_stack_biggest(t_stack *s)
 	return (biggest);
 }
 
+/**
+ * Get the smallest link in a stack
+ * @param t_stack *s:	The stack to check
+ * @return t_link*:		The biggest link
+ */
 t_link	*get_stack_smallest(t_stack *s)
 {
 	t_link		*link;
@@ -45,6 +55,14 @@ t_link	*get_stack_smallest(t_stack *s)
 	return (smallest);
 }
 
+/**
+ * Get the minimum required steps to reach a link
+ * @param t_stack *s:	The stack to check in
+ * @param t_link *f:	The link to search for in t_stack *s
+ * @return int:			The amount of steps required to reach t_link *f,
+ * 						is positive if steps are from the top of the stack,
+ * 						is negative if steps are from the back of the stack
+ */
 int	get_min_steps_to_reach(t_stack *s, t_link *f)
 {
 	t_link		*temp;
@@ -71,6 +89,11 @@ int	get_min_steps_to_reach(t_stack *s, t_link *f)
 		return (-steps_back);
 }
 
+/**
+ * Get the bottom of a stack
+ * @param t_stack *s:	The stack to get the bottom of
+ * @return t_link*:		The bottom link of the stack
+ */
 t_link	*get_stack_bottom(t_stack *s)
 {
 	t_link		*link;
@@ -81,6 +104,12 @@ t_link	*get_stack_bottom(t_stack *s)
 	return (link);
 }
 
+/**
+ * Get a link from a stack based on its index number (iterative index, not id)
+ * @param t_stack *s:	The stack to iterate over
+ * @param int index:	The index at which to return the link
+ * @return t_link*:		The link at that index
+ */
 t_link	*get_stack_link(t_stack *s, int index)
 {
 	t_link		*link;
